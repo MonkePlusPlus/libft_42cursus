@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 17:15:40 by ptheo             #+#    #+#             */
-/*   Updated: 2024/04/01 17:15:41 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/05/19 16:10:07 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	temp = NULL;
-	if (c == 0)
+	if ((char)c == '\0')
 		return ((char *)s + ft_strlen((char *)s));
 	while (s[i])
 	{

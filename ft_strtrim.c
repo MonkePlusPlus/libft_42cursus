@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 23:44:22 by ptheo             #+#    #+#             */
-/*   Updated: 2024/04/03 23:44:23 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/05/19 17:18:19 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup((char *)s1));
 	while (in_trim(s1[i], set))
 		i++;
-	while (in_trim(s1[size], set))
+	while (in_trim(s1[size], set) && i < size)
 		size--;
 	str = malloc(((size - i) + 2) * sizeof(char));
 	if (!str)
 		return (NULL);
 	while (s1[i] && i <= size)
-	{
-		str[index++] = s1[i];
-		i++;
-	}
+		str[index++] = s1[i++];
 	str[index] = '\0';
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 23:55:15 by ptheo             #+#    #+#             */
-/*   Updated: 2024/04/03 23:55:16 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/05/21 17:12:12 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,20 @@ void	fullfill(char const *s, char *result, int start, int end)
 	result[i] = '\0';
 }
 
+void	*free_error(char	**p, int index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index)
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -75,8 +89,8 @@ char	**ft_split(char const *s, char c)
 			first = i;
 			i = check_ifc(s, i, c, 0);
 			result[index] = malloc(((i - first) + 1) * sizeof(char));
-			if (!result)
-				return (NULL);
+			if (result[index] == NULL)
+				return (free_error(result, index));
 			fullfill(s, result[index], first, i);
 			index++;
 		}
