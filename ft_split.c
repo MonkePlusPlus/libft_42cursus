@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 23:55:15 by ptheo             #+#    #+#             */
-/*   Updated: 2024/05/21 17:12:12 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:54:34 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	count_words(char const *s, char c)
 
 	i = 0;
 	first = 1;
+	count = 0;
 	while (s[i])
 	{
 		if (first && s[i] != c)
@@ -34,9 +35,9 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-int	check_ifc(char const *s, int i, char c, int chec)
+int	check_ifc(char const *s, int i, char c)
 {
-	while (s[i] && ((chec && s[i] == c) || (!chec && s[i] != c)))
+	while (s[i] && s[i] != c)
 		i++;
 	return (i);
 }
@@ -83,17 +84,17 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[i])
 	{
-		i = check_ifc(s, i, c, 1);
 		if (s[i] != c && s[i])
 		{
 			first = i;
-			i = check_ifc(s, i, c, 0);
+			i = check_ifc(s, i, c);
 			result[index] = malloc(((i - first) + 1) * sizeof(char));
 			if (result[index] == NULL)
 				return (free_error(result, index));
-			fullfill(s, result[index], first, i);
+			fullfill(s, result[index], first, i--);
 			index++;
 		}
+		i++;
 	}
 	return (result[index] = 0, result);
 }

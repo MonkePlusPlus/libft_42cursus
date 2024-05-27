@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:19:47 by ptheo             #+#    #+#             */
-/*   Updated: 2024/04/01 16:19:50 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/05/27 14:59:27 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <string.h>
+# include <stdint.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
