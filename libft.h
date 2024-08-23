@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:19:47 by ptheo             #+#    #+#             */
-/*   Updated: 2024/05/27 14:59:27 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/06/24 19:25:11 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 typedef struct s_list
 {
