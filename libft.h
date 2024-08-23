@@ -6,7 +6,7 @@
 /*   By: ptheo <ptheo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:19:47 by ptheo             #+#    #+#             */
-/*   Updated: 2024/06/24 19:25:11 by ptheo            ###   ########.fr       */
+/*   Updated: 2024/08/23 15:48:10 by ptheo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+char	**ft_betsplit(char const *s, char *c);
+int		ft_check_char(char s, char *c);
 
 #endif
